@@ -27,7 +27,7 @@ def load__model():
 
 def predict(fullpath):
     data = image.load_img(fullpath, target_size=(128, 128, 3))
-    # (150,150,3) ==> (1,150,150,3)
+    # (224,224,3) ==> (128, 128, 3) - used a self trained model, not the mobilenet.
     data = np.expand_dims(data, axis=0)
     # Scaling
     data = data.astype('float') / 255
