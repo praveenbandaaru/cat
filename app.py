@@ -61,10 +61,10 @@ def upload_file():
         pred_prob = result.item()
 
         if pred_prob > .5:
-            label = 'Dog'
+            label = 'Fire'
             accuracy = round(pred_prob * 100, 2)
         else:
-            label = 'Cat'
+            label = 'Smoke'
             accuracy = round((1 - pred_prob) * 100, 2)
 
         return render_template('predict.html', image_file_name=file.filename, label=label, accuracy=accuracy)
